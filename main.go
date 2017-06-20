@@ -124,7 +124,7 @@ func main() {
 		Links:        []*string{},
 		Memory:       aws.Int64(vargs.Memory),
 		MountPoints:  []*ecs.MountPoint{},
-		Name:         aws.String(vargs.Container),
+		Name:         aws.String(containerName),
 		PortMappings: []*ecs.PortMapping{},
 
 		Ulimits: []*ecs.Ulimit{},
