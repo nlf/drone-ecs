@@ -12,6 +12,7 @@ type Params struct {
 	Image        string            `json:"image_name"`
 	Tag          string            `json:"image_tag"`
 	Service      string            `json:"service"`
+	Container    string            `json:"container"`
 	Cluster      string            `json:"cluster"`
 	Memory       int64             `json:"memory"`
 	Environment  drone.StringSlice `json:"environment_variables"`

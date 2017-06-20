@@ -95,6 +95,11 @@ func main() {
 		return
 	}
 
+	containerName := vargs.Family + "-container"
+	if vargs.Container != "" {
+		containerName = vargs.Container
+	}
+
 	svc := ecs.New(
 		session.New(&aws.Config{
 			Region:      aws.String(vargs.Region),
@@ -119,7 +124,7 @@ func main() {
 		Links:        []*string{},
 		Memory:       aws.Int64(vargs.Memory),
 		MountPoints:  []*ecs.MountPoint{},
-		Name:         aws.String(vargs.Family + "-container"),
+		Name:         aws.String(vargs.Container),
 		PortMappings: []*ecs.PortMapping{},
 
 		Ulimits: []*ecs.Ulimit{},
